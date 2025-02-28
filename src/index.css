@@ -1,12 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap");
 @import "tailwindcss";
 
+@theme {
+  --font-notosans: "Noto Sans Thai", sans-serif;
+  --color-primary: #ffffffde;
+  --color-secondary: #00D8FF;
+  --color-third: #242424;
+
+  --animate-spin-slow: spinSlow 20s linear infinite;
+  --animate-wiggle: wiggle 1.5s ease-in-out infinite;
+}
+
+@keyframes spinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg); 
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans Thai", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: #ffffffde;
   background-color: #242424;
 
   font-synthesis: none;
@@ -27,14 +56,10 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  overflow-x: hidden;
+  /* place-items: center; */
+  /* min-width: 320px; */
+  /* min-height: 100vh; */
 }
 
 button {

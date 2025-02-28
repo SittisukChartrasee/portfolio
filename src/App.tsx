@@ -1,34 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Navbar } from "./src/components"
+import { HomeScreen, SkillScreen } from "./src/screen"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="w-screen">
+      <div className="w-full xl:w-[1243px] mx-auto">
+        <Navbar />
+        <HomeScreen />
+        <SkillScreen />
+        {/* <div className="border-2 border-yellow-50">
+          <h2 className="text-white text-2xl font-semibold mb-4">Responsive Component</h2>
+          <p className="text-white">
+            This container adjusts its width based on the screen size:
+            - Full width on small screens
+            - 80% width on medium screens
+            - 70% width on large screens
+            - 1243px width on extra-large screens
+          </p>
+        </div> */}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
